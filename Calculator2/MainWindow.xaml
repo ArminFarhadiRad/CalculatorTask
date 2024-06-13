@@ -1,0 +1,31 @@
+﻿<Window x:Class="Calculator2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Calculator2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="517" Width="486">
+    <Grid Margin="0,0,301,-47">
+        <Grid Margin="0,0,-299,48" Background="#FF16209E">
+            <TextBox x:Name="textResult" HorizontalAlignment="Center" Margin="0,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="464" Height="132" FontSize="48" />
+            <Button Content="7" HorizontalAlignment="Left" Margin="34,169,0,0" VerticalAlignment="Top" Height="54" Width="69" FontSize="22" Foreground="White" BorderBrush="White" Background="Black" Click="Button_Click" FontWeight="Bold"/>
+            <Button Content="8" HorizontalAlignment="Left" Margin="147,169,0,0" VerticalAlignment="Top" Height="54" Width="71" FontSize="22" BorderBrush="White" Foreground="White" Background="Black" Click="Button_Click" FontWeight="Bold"/>
+            <Button Content="9" HorizontalAlignment="Left" Margin="265,169,0,0" VerticalAlignment="Top" Height="54" Width="69" FontSize="22" Background="Black" BorderBrush="White" Foreground="White" Click="Button_Click" FontWeight="Bold"/>
+            <Button x:Name="Sum" Content="+" HorizontalAlignment="Left" Margin="378,169,0,0" VerticalAlignment="Top" Height="54" Width="71" Background="Black" BorderBrush="White" Foreground="White" FontSize="22" FontWeight="Bold" Click="Sum_Click"/>
+            <Button Content="4" HorizontalAlignment="Left" Margin="34,250,0,0" VerticalAlignment="Top" Height="54" Width="69" FontSize="22" Foreground="White" BorderBrush="White" Background="Black" Click="Button_Click" FontWeight="Bold"/>
+            <Button Content="5" HorizontalAlignment="Left" Margin="147,250,0,0" VerticalAlignment="Top" Height="54" Width="71" FontSize="22" Background="Black" BorderBrush="White" Foreground="White" Click="Button_Click" FontWeight="Bold"/>
+            <Button Content="6" HorizontalAlignment="Left" Margin="265,250,0,0" VerticalAlignment="Top" Height="54" Width="69" FontSize="22" Foreground="White" BorderBrush="White" Background="Black" Click="Button_Click" FontWeight="Bold"/>
+            <Button x:Name="Minus" Content="-" HorizontalAlignment="Left" Margin="378,250,0,0" VerticalAlignment="Top" Height="54" Width="71" Background="Black" BorderBrush="White" Foreground="White" FontSize="22" FontWeight="Bold" Click="Minus_Click"/>
+            <Button Content="3" HorizontalAlignment="Left" Margin="34,342,0,0" VerticalAlignment="Top" Height="54" Width="69" FontSize="22" Background="Black" BorderBrush="White" Foreground="White" Click="Button_Click" FontWeight="Bold"/>
+            <Button Content="2" HorizontalAlignment="Left" Margin="147,342,0,0" VerticalAlignment="Top" Height="54" Width="71" FontSize="22" Background="Black" BorderBrush="White" Foreground="White" Click="Button_Click" FontWeight="Bold"/>
+            <Button Content="1" HorizontalAlignment="Left" Margin="265,342,0,0" VerticalAlignment="Top" Height="54" Width="69" FontSize="22" Foreground="White" BorderBrush="White" Background="Black" FontWeight="Bold" Click="Button_Click"/>
+            <Button x:Name="Multiply" Content="*" HorizontalAlignment="Left" Margin="378,342,0,0" VerticalAlignment="Top" Height="54" Width="71" Background="Black" BorderBrush="White" Foreground="White" FontSize="22" FontWeight="Bold" Click="Multiply_Click"/>
+            <Button x:Name="Clear" Content="C" HorizontalAlignment="Left" Margin="34,426,0,0" VerticalAlignment="Top" Height="54" Width="69" Background="Black" BorderBrush="White" Foreground="White" FontSize="22" FontWeight="Bold" Click="Clear_Click"/>
+            <Button Content="0" HorizontalAlignment="Left" Margin="147,426,0,0" VerticalAlignment="Top" Height="54" Width="71" FontWeight="Bold" FontSize="22" Background="Black" BorderBrush="White" Foreground="White" Click="Button_Click"/>
+            <Button x:Name="Division" Content="/" HorizontalAlignment="Left" Margin="265,426,0,0" VerticalAlignment="Top" Height="54" Width="69" Background="Black" BorderBrush="White" Foreground="White" FontSize="22" FontWeight="Bold" Click="Division_Click"/>
+            <Button x:Name="Equal" Content="=" HorizontalAlignment="Left" Margin="378,426,0,0" VerticalAlignment="Top" Height="54" Width="71" Foreground="White" BorderBrush="White" Background="Black" FontSize="22" FontWeight="Bold" Click="Equal_Click"/>
+        </Grid>
+
+    </Grid>
+</Window>
