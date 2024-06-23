@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Calculator2"
         mc:Ignorable="d"
-        Title="MainWindow" Height="517" Width="486">
+        Title="MainWindow" Height="606" Width="486">
     <Grid Margin="0,0,301,-47">
         <Grid Margin="0,0,-299,48" Background="#FF16209E">
-            <TextBox x:Name="textResult" HorizontalAlignment="Center" Margin="0,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="464" Height="132" FontSize="48" />
+            <TextBox x:Name="textResult" HorizontalAlignment="Center" Margin="0,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="464" Height="98" FontSize="48" />
             <Button Content="7" HorizontalAlignment="Left" Margin="34,169,0,0" VerticalAlignment="Top" Height="54" Width="69" FontSize="22" Foreground="White" BorderBrush="White" Background="Black" Click="Button_Click" FontWeight="Bold"/>
             <Button Content="8" HorizontalAlignment="Left" Margin="147,169,0,0" VerticalAlignment="Top" Height="54" Width="71" FontSize="22" BorderBrush="White" Foreground="White" Background="Black" Click="Button_Click" FontWeight="Bold"/>
             <Button Content="9" HorizontalAlignment="Left" Margin="265,169,0,0" VerticalAlignment="Top" Height="54" Width="69" FontSize="22" Background="Black" BorderBrush="White" Foreground="White" Click="Button_Click" FontWeight="Bold"/>
@@ -25,6 +25,8 @@
             <Button Content="0" HorizontalAlignment="Left" Margin="147,426,0,0" VerticalAlignment="Top" Height="54" Width="71" FontWeight="Bold" FontSize="22" Background="Black" BorderBrush="White" Foreground="White" Click="Button_Click"/>
             <Button x:Name="Division" Content="/" HorizontalAlignment="Left" Margin="265,426,0,0" VerticalAlignment="Top" Height="54" Width="69" Background="Black" BorderBrush="White" Foreground="White" FontSize="22" FontWeight="Bold" Click="Division_Click"/>
             <Button x:Name="Equal" Content="=" HorizontalAlignment="Left" Margin="378,426,0,0" VerticalAlignment="Top" Height="54" Width="71" Foreground="White" BorderBrush="White" Background="Black" FontSize="22" FontWeight="Bold" Click="Equal_Click"/>
+            <Button x:Name="Clear_Copy" Content="." HorizontalAlignment="Left" Margin="34,506,0,0" VerticalAlignment="Top" Height="54" Width="69" Background="Black" BorderBrush="White" Foreground="White" FontSize="22" FontWeight="Bold" Click="Button_Click"/>
+            <TextBox x:Name="TextBox2" HorizontalAlignment="Left" Margin="355,113,0,0" TextWrapping="Wrap" Text="=" VerticalAlignment="Top" Width="120" Height="40"/>
         </Grid>
 
     </Grid>

@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.Globalization;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -16,9 +17,10 @@ namespace Calculator2
     /// </summary>
     public partial class MainWindow : Window
     {
-        int number1;
-        int number2;
+        float number1=float.NaN;
+        float number2;
         string oprator;
+        float result=float.NaN;
 
         public MainWindow()
         {
@@ -28,58 +30,117 @@ namespace Calculator2
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Button button = (Button)sender;
-            textResult.Text += button.Content.ToString();
-            number2 = int.Parse(textResult.Text);
+
+            if (textResult.Text.Contains("+") || textResult.Text.Contains("-") || textResult.Text.Contains("*") || textResult.Text.Contains("/"))
+            {
+                textResult.Text = "";
+                textResult.Text += button.Content.ToString();
+                number2 = float.Parse(textResult.Text, CultureInfo.InvariantCulture.NumberFormat);
+
+            }
+            else
+            {
+                textResult.Text += button.Content.ToString();
+                number2 = float.Parse(textResult.Text, CultureInfo.InvariantCulture.NumberFormat);
+            }
+           
+
+            
         }
 
         private void Sum_Click(object sender, RoutedEventArgs e)
         {
-            number1= int.Parse(textResult.Text);
+            if (float.NaN.Equals(number1))
+            {
+                number1 = float.Parse(textResult.Text, CultureInfo.InvariantCulture.NumberFormat);
+            }
+            else
+            {
+                EqualOprator(number1, number2);
+            }
             oprator = "+";
-            textResult.Clear();
+            Button button = (Button)sender;
+            textResult.Text += button.Content.ToString();
         }
 
         private void Minus_Click(object sender, RoutedEventArgs e)
         {
-            number1 = int.Parse(textResult.Text);
+            if (float.NaN.Equals(number1))
+            {
+                number1 = float.Parse(textResult.Text, CultureInfo.InvariantCulture.NumberFormat);
+            }
+            else
+            {
+                EqualOprator(number1, number2);
+            }
             oprator = "-";
-            textResult.Clear();
+            Button button = (Button)sender;
+            textResult.Text += button.Content.ToString();
         }
 
         private void Multiply_Click(object sender, RoutedEventArgs e)
         {
-            number1 = int.Parse(textResult.Text);
+            if (float.NaN.Equals(number1))
+            {
+                number1 = float.Parse(textResult.Text, CultureInfo.InvariantCulture.NumberFormat);
+            }
+            else
+            {
+                EqualOprator(number1, number2);
+            }
             oprator = "*";
-            textResult.Clear();
+            Button button = (Button)sender;
+            textResult.Text += button.Content.ToString();
         }
 
         private void Division_Click(object sender, RoutedEventArgs e)
         {
-            number1 = int.Parse(textResult.Text);
+            if (float.NaN.Equals(number1))
+            {
+                number1 = float.Parse(textResult.Text, CultureInfo.InvariantCulture.NumberFormat);
+            }
+            else
+            {
+                EqualOprator(number1, number2);
+            }
             oprator = "/";
-            textResult.Clear();
+            Button button = (Button)sender;
+            textResult.Text += button.Content.ToString();
         }
+
 
         private void Equal_Click(object sender, RoutedEventArgs e)
         {
-            number2 = int.Parse(textResult.Text);
-            int result = 0;
+            number2 = float.Parse(textResult.Text, CultureInfo.InvariantCulture.NumberFormat);
+
+            textResult.Clear();
+            TextBox2.Clear();
+
+            EqualOprator(number1, number2);
+
+            textResult.Text= string.Format("{0:N2}", result);
+
+
+        }
+
+        private void EqualOprator(float num1, float num2)
+        {
 
             switch (oprator)
             {
                 case "+":
-                    result = number1 + number2;
+                    result = num1 + num2;
                     break;
                 case "-":
-                    result = number1 - number2;
+                    result = num1 - num2;
                     break;
                 case "*":
-                    result = number1 * number2;
+                    result = num1 * num2;
                     break;
                 case "/":
-                    if(number2 != 0)
+                    if (number2 != 0)
                     {
-                        result = number1 / number2;
+                        result = num1 / num2;
                     }
                     else
                     {
@@ -89,17 +150,23 @@ namespace Calculator2
 
             }
 
-            if(textResult.Text == "0")
+            if (textResult.Text == "0")
             {
                 textResult.Clear();
             }
-
-            textResult.Text=result.ToString();
+            TextBox2.Clear();
+            TextBox2.Text = string.Format("{0:N2}", result);
+            number1 = result;
         }
 
         private void Clear_Click(object sender, RoutedEventArgs e)
         {
             textResult.Clear();
+            TextBox2.Clear();
+            result = float.NaN;
+            number1= float.NaN;
+            
         }
+
     }
 }
